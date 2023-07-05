@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "Segoe UI Historic";
+  src: local("Arial");
+  unicode-range: U+530-5f4, U+10a0-10ff;
+}
+@font-face {
+  font-family: "Segoe UI Historic";
+  font-weight: 700;
+  src: local("Arial Bold"), local("Arial");
+  unicode-range: U+530-5f4, U+10a0-10ff;
+}
+
+* {
+  font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: #1c1e21; */
+  color: #050505;
+  direction: ltr;
+  line-height: 1.34;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* div {
+  display: inline-block;
+} */
+
+body {
+  background-color: #f0f2f5;
+  /* height: 10000px; */
+  display: flex;
+  flex-direction: column;
+}
+
+/* button *{
+    user-select: none;
+} */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  filter: invert(8%) sepia(10%) saturate(200%) saturate(200%) saturate(166%) hue-rotate(177deg) brightness(104%) contrast(91%);
+}
+
+div::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Behind scroll bar */
+div:hover::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* bar */
+div:hover::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #bcc0c4;
+}
+
+.box {
+  border-radius: max(0px, min(8px, ((100vw - 4px) - 100%) * 9999)) / 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  /* padding: 12px 16px 10px 16px; */
+  display: flex;
+}
+
+.btn {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn:active::after {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.btn:active {
+  transform: scale(96%);
+}
+
+/* ========================================= Float Menu ======================================*/
+#float-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  /* width: 344px; */
+  padding: 8px;
+  z-index: 20;
+  max-height: 435px;
+  overflow-y: auto;
+}
+#float-menu-quote {
+  display: none;
+  position: absolute;
+  /* transform: rotate(-45deg); */
+  box-shadow: 1px -1px 1px rgba(255, 255, 255, 0.5);
+  width: 0;
+  background-color: white;
+  border-width: 6px;
+  border-style: solid;
+  border-color: white;
+  z-index: 20;
+}
+
+.float-menu-button {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  /* align-items: center; */
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.float-menu-button-text {
+  color: #050505;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.25;
+}
+
+.float-menu-button-icon {
+  filter: invert(8%) sepia(10%) saturate(200%) saturate(200%) saturate(166%) hue-rotate(177deg) brightness(104%) contrast(91%);
+  transform: translateY(-0.5px);
+}
+
+.float-menu-button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.float-menu-button:active {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.float-menu-button-subtext {
+  font-weight: 400;
+  word-break: break-word;
+  word-wrap: break-word;
+  color: #65676b;
+  font-size: 0.75rem;
+}
+
+.float-menu-saperator {
+  background-color: #ced0d4;
+  height: 1px;
+  margin: 8px;
+  padding: 0.5px;
+}
+
+/* ======================================= End Float Menu ======================================= */
+
+#float-description {
+  padding: 8px 12px 9px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgba(11, 11, 11, 0.8);
+  word-wrap: break-word;
+  color: #e4e6eb;
+  font-weight: 400;
+  line-height: 1.2308;
+  font-size: 0.8125rem;
+  word-break: break-word;
+  position: absolute;
+  user-select: none;
+  opacity: 0;
+  z-index: 999999;
+  transition: opacity 0.1s;
+  transition-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+
+
+#float-profile-preview {
+  position: absolute;
+  /* top: 0; */
+  /* left: 50%;
+    transform: translateX(-50%); */
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+  width: 100vw;
+  max-width: 400px;
+  /* height: 100px; */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#float-profile-preview-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+#float-profile-preview-button-addtostory {
+  min-width: 100px;
+  border-radius: 6px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: #1b74e4;
+  padding: 0 12px 0 12px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: white;
+  gap: 4px;
+}
+
+#float-profile-preview-button-editprofile {
+  min-width: 100px;
+  border-radius: 6px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: #e4e6eb;
+  padding: 0 12px 0 12px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  gap: 4px;
+}
+
+#float-profile-preview-button-options {
+  display: flex;
+  justify-content: center;
+  height: 36px;
+  align-items: center;
+  padding: 0 21.5px 0 21.5px;
+  border-radius: 6px;
+  background-color: #e4e6eb;
+}
+
+#float-profile-preview-details {
+  display: flex;
+  /* gap: 16px; */
+  padding: 0 12px 0 12px;
+}
+
+#float-profile-preview-details-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 4px;
+  padding-top: 2px;
+}
+#float-profile-preview-details-username {
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+#float-profile-preview-details-born-text {
+  word-wrap: break-word;
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.9375rem;
+}
+
+#float-profile-preview-details-born {
+  display: flex;
+  gap: 12px;
+}

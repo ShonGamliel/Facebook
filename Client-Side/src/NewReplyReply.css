@@ -1,0 +1,8 @@
+.new-reply-reply {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  padding-top: 4px;
+  padding-bottom: 8px;
+  padding-left: 40px;
+}

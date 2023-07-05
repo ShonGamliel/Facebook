@@ -1,0 +1,41 @@
+#float-reactions {
+  display: flex;
+  position: absolute;
+  left: -21px;
+  top: -11px;
+  z-index: 99999999;
+  background-color: white;
+  border-radius: 40px;
+  opacity: 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: 0.15s;
+  animation: moveReactionsUp 0.15s ease-in 0.15s forwards;
+}
+.reaction-button {
+  /* opacity: 0; */
+  padding: 4px;
+  min-width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.reaction-button:hover {
+  cursor: pointer;
+  transform: translateY(-5px) scale(120%);
+}
+
+.sad-reaction {
+  transform: scale(110%);
+}
+
+.sad-reaction:hover {
+  transform: translateY(-5px) scale(130%);
+}
+
+@keyframes moveReactionsUp {
+  to {
+    opacity: 1;
+    transform: translateY(-38px);
+  }
+}
